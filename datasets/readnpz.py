@@ -10,7 +10,7 @@ def load_graph_features(npz_file_path):
                 print(key)
 
             # Access and display the corresponding values
-            print("\nContent of the .npz file:")
+            print("/nContent of the .npz file:")
             for key, value in data.items():
                 print(f"{key}:")
                 print(value)
@@ -29,7 +29,7 @@ def load_graph_features(npz_file_path):
 
                     print("-" * 30)
 
-                print("\n" + "-" * 30)
+                print("/n" + "-" * 30)
     except IOError as e:
         print(f"Error loading the .npz file: {e}")
         return None, None
@@ -37,7 +37,10 @@ def load_graph_features(npz_file_path):
 # Example usage:
 #npz_file_path = 'E:/summer_intern/Hua_zheng_Wang/source_localization/DySL/datasets/yelp_new/graphs.npz'
 #npz_file_path = 'E:/summer_intern/Hua_zheng_Wang/source_localization/DySL/datasets/Movielens-10M/graphs.npz'
-npz_file_path = 'E:\summer_intern\Hua_zheng_Wang\source_localization\DySL\datasets\Enron_new\graphs.npz'
+#npz_file_path = 'E:/summer_intern/Hua_zheng_Wang/source_localization/DySL/datasets/Enron_new/graphs.npz'
+#npz_file_path = 'E:/summer_intern/Hua_zheng_Wang/source_localization/DySL/datasets/bitcoin-alpha/bitcoin.npz'
+#npz_file_path = 'E:/summer_intern/Hua_zheng_Wang/source_localization/DySL/datasets/higgs/higgs.npz'
+npz_file_path = 'E:/summer_intern/Hua_zheng_Wang/source_localization/DySL/datasets/PPI/PPI.npz'
 graph_features, labels = load_graph_features(npz_file_path)
 
 if graph_features is not None and labels is not None:
