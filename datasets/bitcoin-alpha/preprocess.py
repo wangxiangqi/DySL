@@ -21,8 +21,9 @@ def read_csv_and_create_multigraph(csv_file_path):
             # 添加边到multigraph，使用时间戳作为边属性
             #print(timestamp)
             #edge=(source, target, **{'date':timestamp})
-            multigraph.add_edge(source, target, **{'date':timestamp})
-
+            multigraph.add_edge(int(source), int(target), **{'date':timestamp})
+    print(len(multigraph.nodes()))
+    print(len(multigraph.edges()))
     return multigraph
 
 # 示例用法
@@ -30,8 +31,8 @@ csv_file_path = 'E:/summer_intern/Hua_zheng_Wang/source_localization/DySL/datase
 result_multigraph = read_csv_and_create_multigraph(csv_file_path)
 
 # 打印结果
-for edge in result_multigraph.edges(data=True):
-    print(edge)
+#for edge in result_multigraph.edges(data=True):
+#    print(edge)
 
 def divide_multigraph(original_multigraph, num_divisions):
     edges_sorted = sorted(original_multigraph.edges(data=True), key=lambda x: x[2]['date'])

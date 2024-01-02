@@ -28,9 +28,10 @@ def load_graph_features(npz_file_path):
                         print(edge)
 
                     print("-" * 30)
-
+                    print(len(graph.nodes()))
+                    print(len(graph.edges()))
                 print("/n" + "-" * 30)
-        return data.items()
+        
     except IOError as e:
         print(f"Error loading the .npz file: {e}")
         return None, None
@@ -38,13 +39,14 @@ def load_graph_features(npz_file_path):
 # Example usage:
 #npz_file_path = 'E:/summer_intern/Hua_zheng_Wang/source_localization/DySL/datasets/yelp_new/graphs.npz'
 #npz_file_path = 'E:/summer_intern/Hua_zheng_Wang/source_localization/DySL/datasets/Movielens-10M/graphs.npz'
-#npz_file_path = 'E:/summer_intern/Hua_zheng_Wang/source_localization/DySL/datasets/Enron_new/graphs.npz'
+npz_file_path = 'E:/summer_intern/Hua_zheng_Wang/source_localization/DySL/datasets/Enron_new/graphs.npz'
 #npz_file_path = 'E:/summer_intern/Hua_zheng_Wang/source_localization/DySL/datasets/bitcoin-alpha/bitcoin.npz'
 #npz_file_path = 'E:/summer_intern/Hua_zheng_Wang/source_localization/DySL/datasets/higgs/higgs.npz'
-npz_file_path = 'E:/summer_intern/Hua_zheng_Wang/source_localization/DySL/datasets/PPI/PPI.npz'
-graph_features, labels = load_graph_features(npz_file_path)
-
-if graph_features is not None and labels is not None:
-    print(f"Graph Features shape: {graph_features.shape}")
-    print(f"Labels shape: {labels.shape}")
+#npz_file_path = 'E:/summer_intern/Hua_zheng_Wang/source_localization/DySL/datasets/PPI/PPI.npz'
+load_graph_features(npz_file_path)
+#print(graph_features)
+#print(labels)
+#if graph_features is not None and labels is not None:
+##    print(f"Graph Features shape: {graph_features.shape}")
+#    print(f"Labels shape: {labels.shape}")
     # You can now use 'graph_features' and 'labels' in your further analysis or processing
