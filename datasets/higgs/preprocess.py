@@ -42,7 +42,7 @@ def divide_multigraph(original_multigraph, num_divisions):
         subgraph_edges = edges_sorted[start_idx:end_idx]
         #print(subgraph_edges)
         # Create a sub-multigraph
-        subgraph = nx.MultiDiGraph(subgraph_edges)
+        subgraph = nx.MultiGraph(subgraph_edges)
 
         # Append the sub-multigraph to the list
         subgraphs.append(subgraph)
@@ -57,4 +57,4 @@ divided_multigraphs = divide_multigraph(multigraph, num_divisions)
 #final_dict={}
 #final_dict['graph']=divided_multigraphs
 final_dict={'graph': divided_multigraphs}
-np.savez('E:/summer_intern/Hua_zheng_Wang/source_localization/DySL/datasets/higgs/higgs.npz', **final_dict)
+np.savez('E:/summer_intern/Hua_zheng_Wang/source_localization/DySL/datasets/higgs/graphs.npz', **final_dict)

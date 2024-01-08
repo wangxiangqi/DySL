@@ -31,6 +31,7 @@ def load_graph_features(npz_file_path):
                     print(len(graph.nodes()))
                     print(len(graph.edges()))
                 print("/n" + "-" * 30)
+                print(type(graph))
         
     except IOError as e:
         print(f"Error loading the .npz file: {e}")
